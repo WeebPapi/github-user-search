@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --primary-blue: #0079ff;
+  --grey-blue: #697c9a;
+  --blue-grey: #4b6a9b;
+  --input-color: #1e2a48;
+  --light-grey: #f6f8ff;
+  --bg-color: #131d30;
+  --off-white: #fefefe;
+  --btn-text: #fff;
+}
