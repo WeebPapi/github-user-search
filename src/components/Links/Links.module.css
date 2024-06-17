@@ -31,3 +31,8 @@
   color: var(--blue-grey);
   margin: 0;
 }
+@media screen and (max-width: 500px) {
+  .entry {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+}

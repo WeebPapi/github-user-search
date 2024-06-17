@@ -24,7 +24,7 @@ const Links: FC<LinksProps> = ({ location, twitter, blog, company }) => {
       <div className={styles.entry}>
         <img src={locationIcon} alt="location" />
         <p className={available(location) ? styles.link : styles.altlink}>
-          {location}
+          {location}...
         </p>
       </div>
       <div className={styles.entry}>
@@ -33,7 +33,7 @@ const Links: FC<LinksProps> = ({ location, twitter, blog, company }) => {
           href={available(twitter) ? twitter : undefined}
           className={available(twitter) ? styles.link : styles.altlink}
         >
-          {twitter}
+          {twitter.slice(0, 13)}...
         </a>
       </div>
       <div className={styles.entry}>
@@ -42,7 +42,7 @@ const Links: FC<LinksProps> = ({ location, twitter, blog, company }) => {
           href={available(blog) ? blog : undefined}
           className={!(blog === "Not available") ? styles.link : styles.altlink}
         >
-          {blog}
+          {blog.slice(0, 13)}...
         </a>
       </div>
       <div className={styles.entry}>
@@ -52,7 +52,7 @@ const Links: FC<LinksProps> = ({ location, twitter, blog, company }) => {
             !(company === "Not available") ? styles.link : styles.altlink
           }
         >
-          {company}
+          {company}...
         </p>
       </div>
     </div>

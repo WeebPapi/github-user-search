@@ -46,3 +46,11 @@
 .input::placeholder {
   color: var(--light-grey);
 }
+@media screen and (max-width: 500px) {
+  .inputbox {
+    max-width: 350px;
+  }
+  .inputbox > button {
+    left: 75%;
+  }
+}
