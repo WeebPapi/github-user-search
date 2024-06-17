@@ -1,0 +1,33 @@
+.container {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.entry {
+  max-width: 145px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0.5rem 1rem 0;
+  box-sizing: border-box;
+}
+.entry > img {
+  width: 19px;
+  height: 24px;
+  margin-right: 0.5rem;
+  object-fit: contain;
+}
+.entry > .link {
+  font-size: 12px;
+  color: var(--light-grey);
+  margin-bottom: 0;
+}
+.entry > .altlink {
+  font-size: 12px;
+  color: var(--blue-grey);
+  margin: 0;
+}

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 
 import styles from "./GithubUserSearch.module.css";
 
@@ -56,6 +56,9 @@ const GithubUserSearch: FC<GithubUserSearchProps> = () => {
         alert("User not found!");
       });
   };
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") handleClick();
+  };
   return (
     <div className={styles.container}>
       <div className={styles.inputbox}>
@@ -66,6 +69,7 @@ const GithubUserSearch: FC<GithubUserSearchProps> = () => {
           onChange={(e) => {
             setValue(e.target.value);
           }}
+          onKeyDown={handleEnter}
           placeholder="Search GitHub username..."
         ></input>
         <button type="button" onClick={handleClick}>

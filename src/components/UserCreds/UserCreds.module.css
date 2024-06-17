@@ -24,26 +24,38 @@
   max-width: 335px;
   width: 100%;
   margin: 2rem 1.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 h1 {
   font-size: 21px;
   margin: 0 0 0.75rem 0;
   color: var(--light-grey);
 }
-h2 {
+a {
   font-size: 14px;
-  margin: 0;
+  margin: 0 0 1rem 0;
   color: var(--primary-blue);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: #6978fe;
 }
 .heading {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 1.5rem;
 }
 .date {
-  font-size: 15px;
+  font-size: 12px;
   color: var(--grey-blue);
   margin: 0.45rem 0 0 0;
+  width: fit-content;
 }
 .bio {
   font-size: 12px;

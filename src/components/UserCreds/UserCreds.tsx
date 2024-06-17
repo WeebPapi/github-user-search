@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import { Stats, Links } from "../";
 import styles from "./UserCreds.module.css";
 
 interface UserCredsProps {
@@ -58,11 +59,21 @@ const UserCreds: FC<UserCredsProps> = ({
         <div className={styles.heading}>
           <div className={styles.names}>
             <h1>{name}</h1>
-            <h2>{`@${login}`}</h2>
+            <a
+              href={`https:\\github.com/${login}`}
+              target="blank"
+            >{`@${login}`}</a>
             <p className={styles.bio}>{bio}</p>
           </div>
           <p className={styles.date}>Joined {calculateDate(joined)}</p>
         </div>
+        <Stats followers={followers} following={following} repos={repos} />
+        <Links
+          twitter={twitter}
+          company={company}
+          blog={blog}
+          location={location}
+        />
       </div>
     </div>
   );
