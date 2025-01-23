@@ -12,4 +12,11 @@ body {
 }
 .App {
   height: 100%;
+  position: relative;
+}
+#attribution {
+  font-size: 12px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }

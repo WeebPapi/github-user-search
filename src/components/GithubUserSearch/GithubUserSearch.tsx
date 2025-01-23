@@ -1,32 +1,33 @@
-import { FC, useState } from "react";
+import { FC, useState } from "react"
 
-import styles from "./GithubUserSearch.module.css";
+import styles from "./GithubUserSearch.module.css"
 
-import axios from "axios";
-import { UserCreds } from "../";
+import axios from "axios"
+import { UserCreds } from "../"
 
 interface GithubUserSearchProps {}
 
 const GithubUserSearch: FC<GithubUserSearchProps> = () => {
-  const apiKey = import.meta.env.VITE_APITOKEN;
-  const [value, setValue] = useState("");
-  const [fulfilled, setFulfilled] = useState(false);
+  const apiKey = import.meta.env.VITE_APITOKEN
+  const [value, setValue] = useState("")
+  const [fulfilled, setFulfilled] = useState(false)
 
-  const [name, setName] = useState("");
-  const [login, setLogin] = useState("");
-  const [joined, setJoined] = useState("");
-  const [avatar, setAvatar] = useState("");
-  const [bio, setBio] = useState("");
-  const [repos, setRepos] = useState("");
-  const [followers, setFollowers] = useState("");
-  const [following, setFollowing] = useState("");
-  const [location, setLocation] = useState("");
-  const [blog, setBlog] = useState("");
-  const [twitter, setTwitter] = useState("");
-  const [company, setCompany] = useState("");
+  const [name, setName] = useState("")
+  const [login, setLogin] = useState("")
+  const [joined, setJoined] = useState("")
+  const [avatar, setAvatar] = useState("")
+  const [bio, setBio] = useState("")
+  const [repos, setRepos] = useState("")
+  const [followers, setFollowers] = useState("")
+  const [following, setFollowing] = useState("")
+  const [location, setLocation] = useState("")
+  const [blog, setBlog] = useState("")
+  const [twitter, setTwitter] = useState("")
+  const [company, setCompany] = useState("")
 
   const handleClick = () => {
-    const url = `https://api.github.com/users/${value.trim()}`;
+    const url = `https://api.github.com/users/${value.trim()}`
+    console.log(apiKey)
     axios
       .get(url, {
         headers: {
@@ -34,31 +35,31 @@ const GithubUserSearch: FC<GithubUserSearchProps> = () => {
         },
       })
       .then((res) => {
-        setFulfilled(true);
-        let info = res.data;
-        console.log(info);
-        setAvatar(info.avatar_url);
-        setLogin(info.login);
-        setName(info.name);
-        setJoined(info.created_at);
-        setBio(info.bio ? info.bio : "This profile does not have a bio");
-        setRepos(info.public_repos);
-        setFollowers(info.followers);
-        setFollowing(info.following);
-        setLocation(info.location ? info.location : "Not available");
-        setBlog(info.blog ? info.blog : "Not available");
+        setFulfilled(true)
+        let info = res.data
+        console.log(info)
+        setAvatar(info.avatar_url)
+        setLogin(info.login)
+        setName(info.name)
+        setJoined(info.created_at)
+        setBio(info.bio ? info.bio : "This profile does not have a bio")
+        setRepos(info.public_repos)
+        setFollowers(info.followers)
+        setFollowing(info.following)
+        setLocation(info.location ? info.location : "Not available")
+        setBlog(info.blog ? info.blog : "Not available")
         setTwitter(
           info.twitter_username ? info.twitter_username : "Not available"
-        );
-        setCompany(info.company ? info.company : "Not available");
+        )
+        setCompany(info.company ? info.company : "Not available")
       })
       .catch(() => {
-        alert("User not found!");
-      });
-  };
+        alert("User not found!")
+      })
+  }
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") handleClick();
-  };
+    if (e.key === "Enter") handleClick()
+  }
   return (
     <div className={styles.container}>
       <div className={styles.inputbox}>
@@ -67,7 +68,7 @@ const GithubUserSearch: FC<GithubUserSearchProps> = () => {
           value={value}
           type="text"
           onChange={(e) => {
-            setValue(e.target.value);
+            setValue(e.target.value)
           }}
           onKeyDown={handleEnter}
           placeholder="Search GitHub username..."
@@ -93,7 +94,7 @@ const GithubUserSearch: FC<GithubUserSearchProps> = () => {
         />
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default GithubUserSearch;
+export default GithubUserSearch
